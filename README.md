@@ -4,31 +4,31 @@ A full-stack wellness platform that empowers users to create, manage, and explor
 
 [Live Demo](https://arvyax-asssign.vercel.app) | [API Base URL](https://arvyax-backend-jqxh.onrender.com) | [API Reference](#api-reference)
 
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge\&logo=react\&logoColor=61DAFB)
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge\&logo=node.js\&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge\&logo=express\&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge\&logo=mongodb\&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge\&logo=vercel\&logoColor=white)
-![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge\&logo=render\&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)
 
 ---
 
 ## Table of Contents
 
-* [Overview](#overview)
-* [Key Features](#key-features)
-* [Technology Stack](#technology-stack)
-* [System Architecture](#system-architecture)
-* [Quick Start Guide](#quick-start-guide)
-* [Project Structure](#project-structure)
-* [Configuration](#configuration)
-* [API Reference](#api-reference)
-* [UI Components](#ui-components)
-* [Security Features](#security-features)
-* [Responsive Design](#responsive-design)
-* [Deployment](#deployment)
-* [Contributing](#contributing)
-* [Contact](#contact)
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [Technology Stack](#technology-stack)
+- [System Architecture](#system-architecture)
+- [Quick Start Guide](#quick-start-guide)
+- [Project Structure](#project-structure)
+- [Configuration](#configuration)
+- [API Reference](#api-reference)
+- [UI Components](#ui-components)
+- [Security Features](#security-features)
+- [Responsive Design](#responsive-design)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [Contact](#contact)
 
 ---
 
@@ -38,8 +38,8 @@ A full-stack wellness platform that empowers users to create, manage, and explor
 
 ### Live Apps
 
-* Frontend: [https://arvyax-asssign.vercel.app](https://arvyax-asssign.vercel.app)
-* Backend API: [https://arvyax-backend-jqxh.onrender.com](https://arvyax-backend-jqxh.onrender.com)
+- Frontend: [https://arvyax-asssign.vercel.app](https://arvyax-asssign.vercel.app)
+- Backend API: [https://arvyax-backend-jqxh.onrender.com](https://arvyax-backend-jqxh.onrender.com)
 
 ---
 
@@ -47,62 +47,85 @@ A full-stack wellness platform that empowers users to create, manage, and explor
 
 ### Authentication
 
-* JWT-based login & signup
-* Password strength validation
-* Role-based access control
-* Protected routes
+- JWT-based login & signup
+- Password strength validation
+- Role-based access control
+- Protected routes
 
 ### Dashboard
 
-* Dual-view: personal and community sessions
-* Tag-based filtering and search
-* Real-time status indicators
+- Dual-view: personal and community sessions
+- Tag-based filtering and search
+- Real-time status indicators
 
 ### Session Editor
 
-* Draft & publish modes
-* Autosave with visual cues
-* Tag suggestion system
+- Draft & publish modes
+- Autosave with visual cues
+- Tag suggestion system
 
 ### UI Design
 
-* Glassmorphism layout
-* Accessible typography
-* Responsive, mobile-first layout
+- Glassmorphism layout
+- Accessible typography
+- Responsive, mobile-first layout
 
 ---
 
 ## Technology Stack
 
-| Layer    | Tools Used                                |
-| -------- | ----------------------------------------- |
-| Frontend | React, Axios, Vercel                      |
-| Backend  | Node.js, Express.js, MongoDB, Render      |
-| Database | MongoDB Atlas                             |
-| Auth     | JWT                                       |
-| Styling  | CSS Modules / Custom Glassmorphism Design |
+| Layer     | Tools Used |
+|-----------|------------|
+| Frontend  | React, Axios, Vercel |
+| Backend   | Node.js, Express.js, MongoDB, Render |
+| Database  | MongoDB Atlas |
+| Auth      | JWT |
+| Styling   | CSS Modules / Custom Glassmorphism Design |
 
 ---
 
 ## System Architecture
 
+<details>
+<summary><strong>System Architecture Diagram (click to expand)</strong></summary>
+
 ```mermaid
 flowchart TD
-  A[User Browser] --> B[React Frontend (Vercel)]
-  B --> C[Express.js Backend (Render)]
-  C --> D[MongoDB Atlas]
+    A[User Browser]
+    B[React Frontend (Vercel)]
+    C[Express.js Backend (Render)]
+    D[MongoDB Atlas]
 
-  B --> E[Login/Register]
-  B --> F[Dashboard]
-  B --> G[Session Editor]
+    A --> B
+    B --> C
+    C --> D
 
-  C --> H[Auth Controller]
-  C --> I[Session Controller]
-  C --> J[JWT Middleware]
+    subgraph Frontend
+        B1[Login / Register]
+        B2[Dashboard]
+        B3[Session Editor]
+    end
+    B --> B1
+    B --> B2
+    B --> B3
 
-  D --> K[Users Collection]
-  D --> L[Sessions Collection]
+    subgraph Backend
+        C1[Auth Controller]
+        C2[Session Controller]
+        C3[JWT Middleware]
+    end
+    C --> C1
+    C --> C2
+    C --> C3
+
+    subgraph Database
+        D1[Users Collection]
+        D2[Sessions Collection]
+    end
+    D --> D1
+    D --> D2
 ```
+</details>
 
 ---
 
@@ -110,9 +133,9 @@ flowchart TD
 
 ### Prerequisites
 
-* Node.js >= 14
-* MongoDB Atlas account
-* Git
+- Node.js >= 14
+- MongoDB Atlas account
+- Git
 
 ### Clone Repository
 
@@ -130,7 +153,6 @@ touch .env
 ```
 
 `.env` file:
-
 ```env
 MONGODB_URI=your-mongodb-uri
 JWT_SECRET=your-secret
@@ -139,7 +161,6 @@ FRONTEND_URL=https://arvyax-asssign.vercel.app
 ```
 
 Start server:
-
 ```bash
 npm run dev
 ```
@@ -199,54 +220,54 @@ const API = axios.create({
 
 ### Auth
 
-| Method | Endpoint           | Description     |
-| ------ | ------------------ | --------------- |
-| POST   | /api/auth/register | Register a user |
-| POST   | /api/auth/login    | Login a user    |
+| Method | Endpoint            | Description       |
+|--------|---------------------|-------------------|
+| POST   | /api/auth/register  | Register a user   |
+| POST   | /api/auth/login     | Login a user      |
 
 ### Sessions
 
-| Method | Endpoint                    | Description         | Auth |
-| ------ | --------------------------- | ------------------- | ---- |
-| GET    | /api/sessions               | Get user sessions   | Yes  |
-| GET    | /api/sessions/published/all | Get public sessions | No   |
-| POST   | /api/sessions               | Create session      | Yes  |
-| PUT    | /api/sessions/\:id          | Update session      | Yes  |
-| DELETE | /api/sessions/\:id          | Delete session      | Yes  |
+| Method | Endpoint                   | Description               | Auth |
+|--------|----------------------------|---------------------------|------|
+| GET    | /api/sessions              | Get user sessions         | Yes  |
+| GET    | /api/sessions/published/all| Get public sessions       | No   |
+| POST   | /api/sessions              | Create session            | Yes  |
+| PUT    | /api/sessions/:id          | Update session            | Yes  |
+| DELETE | /api/sessions/:id          | Delete session            | Yes  |
 
 ---
 
 ## UI Components
 
-| Component        | Description                     |
-| ---------------- | ------------------------------- |
-| Login / Register | User authentication interface   |
-| Dashboard        | Session listings and filtering  |
-| Session Editor   | Draft, tags, autosave system    |
-| Navbar           | Navigation and profile settings |
+| Component        | Description                      |
+|------------------|----------------------------------|
+| Login / Register | User authentication interface    |
+| Dashboard        | Session listings and filtering   |
+| Session Editor   | Draft, tags, autosave system     |
+| Navbar           | Navigation and profile settings  |
 
 ---
 
 ## Security Features
 
-| Feature                   | Status      |
-| ------------------------- | ----------- |
-| JWT Authentication        | Implemented |
+| Feature               | Status     |
+|------------------------|------------|
+| JWT Authentication     | Implemented |
 | Password Hashing (bcrypt) | Implemented |
-| Input Validation          | Implemented |
-| CORS Configuration        | Enabled     |
-| Protected Routes          | Middleware  |
-| Secure Environment Vars   | Used        |
+| Input Validation       | Implemented |
+| CORS Configuration     | Enabled     |
+| Protected Routes       | Middleware  |
+| Secure Environment Vars| Used        |
 
 ---
 
 ## Responsive Design
 
-| Device  | Layout Strategy                        |
-| ------- | -------------------------------------- |
-| Mobile  | Stacked layout, optimized for touch    |
-| Tablet  | Adaptive layout with collapsible menus |
-| Desktop | Grid layout with multi-panel interface |
+| Device   | Layout Strategy         |
+|----------|-------------------------|
+| Mobile   | Stacked layout, optimized for touch |
+| Tablet   | Adaptive layout with collapsible menus |
+| Desktop  | Grid layout with multi-panel interface |
 
 ---
 
@@ -256,20 +277,18 @@ const API = axios.create({
 
 1. Connect your GitHub repository to Vercel
 2. Set:
-
-   * Root: `frontend`
-   * Build Command: `npm run build`
-   * Output Directory: `build`
+   - Root: `frontend`
+   - Build Command: `npm run build`
+   - Output Directory: `build`
 
 ### Backend on Render
 
 1. Connect GitHub repo to Render
 2. Root Directory: `backend`
 3. Environment:
-
-   * Build Command: `npm install`
-   * Start Command: `npm start`
-   * Environment Variables from `.env`
+   - Build Command: `npm install`
+   - Start Command: `npm start`
+   - Environment Variables from `.env`
 
 ### MongoDB Atlas
 
@@ -298,20 +317,19 @@ git push origin feature/your-feature
 
 ### Guidelines
 
-* Follow ESLint + Prettier styles
-* Use meaningful commit messages
-* Keep PRs small and focused
-* Update README when necessary
+- Follow ESLint + Prettier styles
+- Use meaningful commit messages
+- Keep PRs small and focused
+- Update README when necessary
 
 ---
 
 ## Contact
 
-**Sai Charan Nukala**
-Full Stack Developer
-📧 [charan.nukala12@gmail.com](mailto:charan.nukala12@gmail.com)
-📞 +91 93980 53391
-🌐 [Portfolio](http://saicharannukalaportfolio.vercel.app)
-🔗 [LinkedIn](https://www.linkedin.com/in/sai-charan-nukala)
+**Sai Charan Nukala**  
+Full Stack Developer  
+📧 charan.nukala12@gmail.com  
+📞 +91 93980 53391  
+🌐 [Portfolio](http://saicharannukalaportfolio.vercel.app)  
+🔗 [LinkedIn](https://www.linkedin.com/in/sai-charan-nukala)  
 🐙 [GitHub](https://github.com/Saicharan-nukala)
-
