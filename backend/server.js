@@ -10,7 +10,7 @@ connectDB();
 
 const app = express();
 app.use(cors({
-  origin: 'https://arvyax-asssign.vercel.app/',
+  origin: 'https://arvyax-asssign.vercel.app',
   credentials: true
 }));
 app.use(express.json());
