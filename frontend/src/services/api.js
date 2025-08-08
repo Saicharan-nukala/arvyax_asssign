@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api", // Change if your backend is deployed
+  baseURL: "https://arvyax-backend-jqxh.onrender.com/api", // ✅ Updated to deployed backend
 });
 
 API.interceptors.request.use((config) => {
