@@ -18,7 +18,6 @@ A full-stack wellness platform that empowers users to create, manage, and explor
 - [Overview](#overview)
 - [Key Features](#key-features)
 - [Technology Stack](#technology-stack)
-- [System Architecture](#system-architecture)
 - [Quick Start Guide](#quick-start-guide)
 - [Project Structure](#project-structure)
 - [Configuration](#configuration)
@@ -81,51 +80,6 @@ A full-stack wellness platform that empowers users to create, manage, and explor
 | Database  | MongoDB Atlas |
 | Auth      | JWT |
 | Styling   | CSS Modules / Custom Glassmorphism Design |
-
----
-
-## System Architecture
-
-<details>
-<summary><strong>System Architecture Diagram (click to expand)</strong></summary>
-
-```mermaid
-flowchart TD
-    A[User Browser]
-    B[React Frontend (Vercel)]
-    C[Express.js Backend (Render)]
-    D[MongoDB Atlas]
-
-    A --> B
-    B --> C
-    C --> D
-
-    subgraph Frontend
-        B1[Login / Register]
-        B2[Dashboard]
-        B3[Session Editor]
-    end
-    B --> B1
-    B --> B2
-    B --> B3
-
-    subgraph Backend
-        C1[Auth Controller]
-        C2[Session Controller]
-        C3[JWT Middleware]
-    end
-    C --> C1
-    C --> C2
-    C --> C3
-
-    subgraph Database
-        D1[Users Collection]
-        D2[Sessions Collection]
-    end
-    D --> D1
-    D --> D2
-```
-</details>
 
 ---
 
