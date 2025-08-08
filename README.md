@@ -1,16 +1,12 @@
-Here’s a **polished and professional README** for your **Arvyax Wellness Platform**, with minimal emojis and **no emojis or performance metrics**. All links and formatting have been fixed or clarified, and badge errors have been corrected.
-
----
-
 # Arvyax Wellness Platform
 
-A modern full-stack wellness platform for creating, managing, and sharing mindfulness sessions with a professional interface, secure authentication, and responsive design.
+A full-stack wellness platform that empowers users to create, manage, and explore mindfulness sessions with a seamless and responsive experience.
 
 [Live Demo](https://arvyax-asssign.vercel.app) | [API Base URL](https://arvyax-backend-jqxh.onrender.com) | [API Reference](#api-reference)
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge\&logo=react\&logoColor=61DAFB)
 ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge\&logo=node.js\&logoColor=white)
-![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge\&logo=express\&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge\&logo=express\&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge\&logo=mongodb\&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge\&logo=vercel\&logoColor=white)
 ![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge\&logo=render\&logoColor=white)
@@ -32,92 +28,80 @@ A modern full-stack wellness platform for creating, managing, and sharing mindfu
 * [Responsive Design](#responsive-design)
 * [Deployment](#deployment)
 * [Contributing](#contributing)
-* [License](#license)
 * [Contact](#contact)
 
 ---
 
 ## Overview
 
-**Arvyax Wellness** is a full-stack application built to provide users with a seamless way to manage their mindfulness sessions, track personal wellness content, and engage with community sessions. It emphasizes a clean user experience, robust authentication, and responsive interface across devices.
+**Arvyax Wellness** is designed to streamline the user experience in mindfulness content creation and sharing. With a clean UI, autosave editing tools, and JWT-secured sessions, the platform promotes self-awareness through thoughtful technology.
 
-### Live URLs
+### Live Apps
 
-* **Frontend**: [https://arvyax-asssign.vercel.app](https://arvyax-asssign.vercel.app)
-* **Backend**: [https://arvyax-backend-jqxh.onrender.com](https://arvyax-backend-jqxh.onrender.com)
+* Frontend: [https://arvyax-asssign.vercel.app](https://arvyax-asssign.vercel.app)
+* Backend API: [https://arvyax-backend-jqxh.onrender.com](https://arvyax-backend-jqxh.onrender.com)
 
 ---
 
 ## Key Features
 
-### Authentication System
+### Authentication
 
-* JWT-based authentication
-* Secure login and registration with password validation
-* Protected routes and session persistence
+* JWT-based login & signup
+* Password strength validation
+* Role-based access control
+* Protected routes
 
 ### Dashboard
 
-* Dual-view: personal and public sessions
-* Grid-based session display
-* Search, filter, and manage sessions
+* Dual-view: personal and community sessions
+* Tag-based filtering and search
+* Real-time status indicators
 
 ### Session Editor
 
+* Draft & publish modes
+* Autosave with visual cues
 * Tag suggestion system
-* Draft and publish modes
-* Smart autosave with visual indicators
 
-### UI/UX
+### UI Design
 
-* Glassmorphism-inspired design
-* Accessible layout and typography
-* Smooth transitions and mobile-first responsiveness
+* Glassmorphism layout
+* Accessible typography
+* Responsive, mobile-first layout
 
 ---
 
 ## Technology Stack
 
-### Frontend
-
-* React.js
-* React Router
-* Axios
-* Vercel (Deployment)
-
-### Backend
-
-* Node.js
-* Express.js
-* MongoDB Atlas
-* Render (Deployment)
+| Layer    | Tools Used                                |
+| -------- | ----------------------------------------- |
+| Frontend | React, Axios, Vercel                      |
+| Backend  | Node.js, Express.js, MongoDB, Render      |
+| Database | MongoDB Atlas                             |
+| Auth     | JWT                                       |
+| Styling  | CSS Modules / Custom Glassmorphism Design |
 
 ---
 
 ## System Architecture
 
 ```mermaid
-flowchart LR
-    subgraph Client Side
-        A[Browser] --> B[React Frontend (Vercel)]
-    end
+flowchart TD
+  A[User Browser] --> B[React Frontend (Vercel)]
+  B --> C[Express.js Backend (Render)]
+  C --> D[MongoDB Atlas]
 
-    subgraph Server Side
-        B --> C[Express API (Render)]
-        C --> D[MongoDB Atlas]
-    end
+  B --> E[Login/Register]
+  B --> F[Dashboard]
+  B --> G[Session Editor]
 
-    subgraph Components
-        B --> E[Login / Register]
-        B --> F[Dashboard]
-        B --> G[Session Editor]
-        C --> H[Auth Controller]
-        C --> I[Session Controller]
-        C --> J[JWT Middleware]
-    end
+  C --> H[Auth Controller]
+  C --> I[Session Controller]
+  C --> J[JWT Middleware]
 
-    D --> K[Users Collection]
-    D --> L[Sessions Collection]
+  D --> K[Users Collection]
+  D --> L[Sessions Collection]
 ```
 
 ---
@@ -126,10 +110,9 @@ flowchart LR
 
 ### Prerequisites
 
-* Node.js (>= 14.x)
-* MongoDB Atlas Account
+* Node.js >= 14
+* MongoDB Atlas account
 * Git
-* Code Editor (e.g., VS Code)
 
 ### Clone Repository
 
@@ -146,14 +129,16 @@ npm install
 touch .env
 ```
 
-**.env**
+`.env` file:
 
 ```env
-MONGODB_URI=your-mongodb-connection-uri
-JWT_SECRET=your-secret-key
+MONGODB_URI=your-mongodb-uri
+JWT_SECRET=your-secret
 PORT=5000
 FRONTEND_URL=https://arvyax-asssign.vercel.app
 ```
+
+Start server:
 
 ```bash
 npm run dev
@@ -167,8 +152,6 @@ npm install
 npm start
 ```
 
-Update `src/services/api.js` with the correct API URL as needed.
-
 ---
 
 ## Project Structure
@@ -176,14 +159,14 @@ Update `src/services/api.js` with the correct API URL as needed.
 ```
 arvyax-wellness/
 ├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── services/
-│   │   └── hooks/
+│   └── src/
+│       ├── components/
+│       ├── hooks/
+│       └── services/
 ├── backend/
 │   ├── controllers/
-│   ├── models/
 │   ├── routes/
+│   ├── models/
 │   └── middleware/
 ```
 
@@ -194,20 +177,19 @@ arvyax-wellness/
 ### Backend `.env`
 
 ```env
-MONGODB_URI=your-uri
+MONGODB_URI=mongodb+srv://...
 JWT_SECRET=your-jwt-secret
 PORT=5000
 FRONTEND_URL=https://arvyax-asssign.vercel.app
 ```
 
-### Frontend `api.js`
+### Frontend API Setup (`api.js`)
 
 ```js
 const API = axios.create({
-  baseURL:
-    process.env.NODE_ENV === 'production'
-      ? 'https://arvyax-backend-jqxh.onrender.com/api'
-      : 'http://localhost:5000/api',
+  baseURL: process.env.NODE_ENV === "production"
+    ? "https://arvyax-backend-jqxh.onrender.com/api"
+    : "http://localhost:5000/api"
 });
 ```
 
@@ -215,126 +197,121 @@ const API = axios.create({
 
 ## API Reference
 
-### Authentication
+### Auth
 
-| Method | Endpoint           | Description       |
-| ------ | ------------------ | ----------------- |
-| POST   | /api/auth/register | Register new user |
-| POST   | /api/auth/login    | Login user        |
+| Method | Endpoint           | Description     |
+| ------ | ------------------ | --------------- |
+| POST   | /api/auth/register | Register a user |
+| POST   | /api/auth/login    | Login a user    |
 
 ### Sessions
 
 | Method | Endpoint                    | Description         | Auth |
 | ------ | --------------------------- | ------------------- | ---- |
-| GET    | /api/sessions               | Get own sessions    | ✅    |
-| GET    | /api/sessions/published/all | Get public sessions | ❌    |
-| POST   | /api/sessions               | Create session      | ✅    |
-| PUT    | /api/sessions/\:id          | Update session      | ✅    |
-| DELETE | /api/sessions/\:id          | Delete session      | ✅    |
+| GET    | /api/sessions               | Get user sessions   | Yes  |
+| GET    | /api/sessions/published/all | Get public sessions | No   |
+| POST   | /api/sessions               | Create session      | Yes  |
+| PUT    | /api/sessions/\:id          | Update session      | Yes  |
+| DELETE | /api/sessions/\:id          | Delete session      | Yes  |
 
 ---
 
 ## UI Components
 
-| Component        | Description                               |
-| ---------------- | ----------------------------------------- |
-| Login / Register | Auth screens with input validation        |
-| Dashboard        | Lists sessions, includes filters          |
-| Session Editor   | Tag input, autosave, publish/draft toggle |
-| Navbar           | Profile menu, logout option               |
+| Component        | Description                     |
+| ---------------- | ------------------------------- |
+| Login / Register | User authentication interface   |
+| Dashboard        | Session listings and filtering  |
+| Session Editor   | Draft, tags, autosave system    |
+| Navbar           | Navigation and profile settings |
 
 ---
 
 ## Security Features
 
-| Feature               | Status               |
-| --------------------- | -------------------- |
-| JWT Authentication    | Implemented          |
-| Password Hashing      | bcryptjs (12 rounds) |
-| CORS                  | Origin-restricted    |
-| Route Protection      | Middleware-based     |
-| Environment Variables | Configured           |
-| Input Sanitization    | Enabled              |
-| Secure Deployment     | HTTPS supported      |
+| Feature                   | Status      |
+| ------------------------- | ----------- |
+| JWT Authentication        | Implemented |
+| Password Hashing (bcrypt) | Implemented |
+| Input Validation          | Implemented |
+| CORS Configuration        | Enabled     |
+| Protected Routes          | Middleware  |
+| Secure Environment Vars   | Used        |
 
 ---
 
 ## Responsive Design
 
-| Device  | Layout                                 |
+| Device  | Layout Strategy                        |
 | ------- | -------------------------------------- |
-| Mobile  | Stacked layout, touch-optimized        |
-| Tablet  | Adaptive layout, collapsible menu      |
-| Desktop | Multi-column layout with full controls |
+| Mobile  | Stacked layout, optimized for touch    |
+| Tablet  | Adaptive layout with collapsible menus |
+| Desktop | Grid layout with multi-panel interface |
 
 ---
 
 ## Deployment
 
-### Frontend (Vercel)
+### Frontend on Vercel
 
-* Connect GitHub repo
-* Set root to `frontend`
-* Build command: `npm run build`
-* Output directory: `build`
+1. Connect your GitHub repository to Vercel
+2. Set:
 
-### Backend (Render)
+   * Root: `frontend`
+   * Build Command: `npm run build`
+   * Output Directory: `build`
 
-* Connect GitHub repo
-* Root: `backend`
-* Build: `npm install`
-* Start: `npm start`
-* Add environment variables from `.env`
+### Backend on Render
 
-### Database (MongoDB Atlas)
+1. Connect GitHub repo to Render
+2. Root Directory: `backend`
+3. Environment:
 
-* Create free-tier cluster
-* Create DB user with readWrite access
-* Enable access from `0.0.0.0/0` or your IP
-* Use connection URI in `.env`
+   * Build Command: `npm install`
+   * Start Command: `npm start`
+   * Environment Variables from `.env`
+
+### MongoDB Atlas
+
+1. Create a free cluster
+2. Add IP whitelist (`0.0.0.0/0`)
+3. Create DB user and get connection URI
+4. Add URI to `.env` as `MONGODB_URI`
 
 ---
 
 ## Contributing
 
-### Development Workflow
+### Workflow
 
 ```bash
-# Fork and clone repo
+# Fork and clone
 git clone https://github.com/your-username/arvyax-wellness.git
 
-# Create feature branch
+# Create new branch
 git checkout -b feature/your-feature
 
-# Make changes and push
-git add .
-git commit -m "feat: describe your change"
+# Commit and push
+git commit -m "Add new feature"
 git push origin feature/your-feature
 ```
 
 ### Guidelines
 
-* Use Prettier + ESLint
-* Follow conventional commit format
-* Document major changes
-* Open a PR for review
-
----
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+* Follow ESLint + Prettier styles
+* Use meaningful commit messages
+* Keep PRs small and focused
+* Update README when necessary
 
 ---
 
 ## Contact
 
-**Maintainer**: *Your Name*
+**Sai Charan Nukala**
+Full Stack Developer
+📧 [charan.nukala12@gmail.com](mailto:charan.nukala12@gmail.com)
+📞 +91 93980 53391
+🌐 [Portfolio](http://saicharannukalaportfolio.vercel.app)
+🔗 [LinkedIn](https://www.linkedin.com/in/sai-charan-nukala)
+🐙 [GitHub](https://github.com/Saicharan-nukala)
 
-* [LinkedIn](https://linkedin.com/in/your-profile)
-* [GitHub](https://github.com/your-username)
-* For queries and support, open a GitHub Issue or start a Discussion.
-
----
-
-If you'd like this README exported as a `.md` file or want it styled for GitHub Pages, let me know.
